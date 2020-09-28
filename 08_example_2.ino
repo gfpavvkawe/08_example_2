@@ -70,9 +70,9 @@ float USS_measure(int TRIG, int ECHO)
 	delayMicroseconds(10);
 	digitalWrite(TRIG, LOW);
 	reading = pulseIn(ECHO, HIGH, timeout) * scale; // unit: mm
+
 	return (reading < dist_min || reading > dist_max) ? lastread : lastread = reading;
 
-	return reading;
 	// Pulse duration to distance conversion example (target distance = 17.3m)
 	// - round trip distance: 34.6m
 	// - expected pulse duration: 0.1 sec, or 100,000us
